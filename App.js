@@ -33,8 +33,8 @@ export default function App() {
                     },
                 })}
                 tabBarOptions={{
-                    activeTintColor: 'blue',
-                    inactiveTintColor: 'gray',
+                    activeTintColor: '#1565c0',
+                    inactiveTintColor: '#78909c',
                 }}
             >
                 <Tab.Screen name="Login" component={Login} />
