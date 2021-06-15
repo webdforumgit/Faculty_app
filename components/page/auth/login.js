@@ -8,7 +8,10 @@ import {StyleSheet,
     Button,
     TouchableOpacity} from "react-native";
 
-export default function Login() {
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
+
+export default function Login({navigation}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -36,9 +39,33 @@ export default function Login() {
                 />
             </View>
 
-            <TouchableOpacity style={styles.loginBtn}>
-                <Text style={styles.loginText}>LOGIN</Text>
+            <TouchableOpacity
+                style={styles.loginBtn} onPress={() =>
+                navigation.navigate('Home', { name: 'Jane' })
+                }
+            >
+                <Text style={styles.loginText}  >LOGIN</Text>
             </TouchableOpacity>
+            <View style={{flexDirection: 'row'}}>
+                <TouchableOpacity
+                    style={styles.signupBtn} onPress={() =>
+                    navigation.navigate('SIGNUP')
+                }
+                >
+                    <Text style={styles.loginText}  >SIGN UP</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.forgetbotton} onPress={() =>
+                    navigation.navigate('FORGETPASS')
+                }
+                >
+                    <Text style={styles.loginText}  >HELP</Text>
+                </TouchableOpacity>
+            </View>
+
+
+
 
         </View>
     );
@@ -92,14 +119,26 @@ const styles = StyleSheet.create({
         backgroundColor: "#64b5f6",
     },
     signupBtn: {
-
-        width: "70%",
+        alignSelf: 'flex-start',
+        width: "25%",
         borderRadius: 25,
         height: 50,
         alignItems: "center",
         justifyContent: "center",
         marginTop: 25,
         backgroundColor: "#8b9dc3",
+    }
+    ,
+    forgetbotton: {
+
+        width: "25%",
+        borderRadius: 25,
+        height: 50,
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: 25,
+        backgroundColor: "#8b9dc3",
+        marginLeft: "4%"
     }
 
 });
